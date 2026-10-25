@@ -1,0 +1,45 @@
+{
+  "name": "gov-contracts-mcp",
+  "version": "0.1.0",
+  "description": "MCP server to pull government software contracts from SAM.gov, Cal eProcure, LA RAMP, and LA County (Doing Business With).",
+  "type": "module",
+  "bin": {
+    "gov-contracts-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "inspect": "npm run build && npx @modelcontextprotocol/inspector node dist/index.js",
+    "smoke": "tsx scripts/smoke.ts",
+    "postinstall": "playwright install chromium || true"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "government-contracts",
+    "sam.gov",
+    "caleprocure",
+    "rampla",
+    "la-county",
+    "procurement"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "cheerio": "^1.0.0",
+    "playwright": "^1.64.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "node": ">=18.17"
+  }
+}
